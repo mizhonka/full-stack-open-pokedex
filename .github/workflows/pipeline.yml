@@ -33,7 +33,9 @@ jobs:
           path: playwright-report/
           retention-days: 30
       - name: Render Deploy
-        if: github.ref == 'refs/heads/main'
+        if: 
+          ${{ github.event_name == 'push' }}
+          github.ref == 'refs/heads/main'
         env:
           deploy_url: ${{ secrets.DEPLOY_HOOK }}
         run: |
