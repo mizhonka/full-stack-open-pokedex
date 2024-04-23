@@ -34,6 +34,7 @@ jobs:
           retention-days: 30
       - name: Render Deploy
         if: 
+          ${{ !contains(github.event.head_commit.message, '#skip') }}
           ${{ github.event_name == 'push' }}
           github.ref == 'refs/heads/main'
         env:
@@ -51,4 +52,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
+          NONE_STRING_TOKEN: skip
       
