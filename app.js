@@ -4,8 +4,8 @@ const app = express()
 // get the port from env variable
 const PORT = process.env.PORT || 5000
 
-app.get('/version', (_req, res) => {
-  res.send('1') // change this string to ensure a new version deployed
+app.get('/health', (_req, res) => {
+  res.send('ok')
 })
 
 app.use(express.static('dist'))
