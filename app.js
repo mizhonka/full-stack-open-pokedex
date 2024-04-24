@@ -8,8 +8,8 @@ app.get('/health', (_req, res) => {
   res.send('ok')
 })
 
-app.get('/health-pipeline', (_req, res)=>{
-    res.send('deployment is online')
+app.get('/health-pipeline', (_req, res) => {
+  res.send('deployment is online')
 })
 
 
