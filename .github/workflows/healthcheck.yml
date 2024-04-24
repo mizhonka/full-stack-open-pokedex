@@ -1,6 +1,8 @@
 name: Healthcheck
 
 on:
+  schedule:
+    - cron: '30 11,23 * * *'
   push:
     branches:
       - main
