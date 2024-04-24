@@ -5,10 +5,13 @@ const app = express()
 const PORT = process.env.PORT || 5000
 
 app.get('/health', (_req, res) => {
-  // eslint-disable-next-line no-constant-condition
-  if (true) throw('error...  ')
   res.send('ok')
 })
+
+app.get('/health-pipeline', (_req, res)=>{
+    res.send('deployment is online')
+})
+
 
 app.use(express.static('dist'))
 

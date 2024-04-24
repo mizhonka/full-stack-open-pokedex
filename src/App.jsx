@@ -41,6 +41,7 @@ const App = () => {
         <PokemonPage pokemonList={pokemonList} previous={previous} next={next} />
       } />
       <Route exact path='/health'/>
+      <Route exact path='/health-pipeline'/>
     </Routes>
   )
 }
